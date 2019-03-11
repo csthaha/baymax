@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>大白</title>
+</head>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    body{
+        height: 100vh;
+        /* width: 50vw; */
+        /* background-color: red; */
+        /* 环形渐变    (起点是圆心 ， 白色开始， 50%没有做颜色渐变) */     
+        background: radial-gradient(circle at center,#fff,#fff 50%,#aaa);
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+    .baymax{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 50%;
+        /* height: 1.5em; */   
+        /* 1 em=16px; */
+        border-bottom: 1.5em solid #000; 
+        background-color: black;
+        transform: translate(-50%,-40%);
+
+    }
+     /* : 伪元素  如：a:hover */
+     /* .baymax:before{   
+        content:"内容开始之前";
+        width: 12em;
+        height: 12em;
+        border-radius: 50%;
+        background-color: black;
+        position: absolute;
+        top: -6em;
+        left: -9em;
+        background: linear-gradient(to bottom,#fff,#fff 50%,#000,#000 50%); 
+        background-size: 200% 200%; 
+        background-position: 0 -100%;  
+
+        animation: blink 6s infinite;
+
+    }
+
+    @keyframes blink{
+        0%,50%{
+            background-position: 0 100%;
+        }
+        85%,95%{
+            background-position: 0 75%;
+        }
+        100%{
+            background-position: 0 100%;
+        }
+    } */
+
+    /*.baymax:after{    /* : 伪元素  如：a:hover 
+        content:"内容结束之后";
+        width: 12em;
+        height: 12em;
+        border-radius: 50%;
+        background-color: black;
+        position: absolute;
+        top: -6em;
+        right: -9em;
+        background: linear-gradient(to bottom,#fff,#fff 50%,#000,#000 50%);
+        background-size: 200% 200%;
+        background-position: 0 -100%;
+        animation: blink 6s infinite;
+    } */
+    .baymax::before{
+        content: "内容开始之前";
+        top: -6em;
+        left: -9em;
+    }
+    .baymax::after{
+        content: "内容结束之后";
+        top: -6em;
+        right: -9em;
+    }
+    .baymax::before,
+    ::after{
+        border-radius: 50%;
+        height: 12em;
+        width: 12em;
+        position: absolute;
+        background-color:red;
+        background: linear-gradient(#ddd,#ddd 50%,red,red 50%);
+        background-size: 200% 200%;
+        background-position: 0 -100%;
+        animation: blink 6s infinite;
+
+    }
+    @keyframes blink{
+        0%,50%{
+            background-position: 0 100%;
+        }
+        85%,90%{
+            background-position: 0 75%;
+        }
+        100%{
+            background-position:0 100%;
+        }
+
+    }
+
+</style>
+
+<div class="baymax">
+
+</div>
+
+<body>
+    
+</body>
+</html>
